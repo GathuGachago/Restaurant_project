@@ -1,7 +1,7 @@
 <template>
     <v-app-bar color="blue" >
         <div>
-            <v-btn to="/" color="white" dark >Home_page </v-btn>
+            <v-btn to="/" color="white" dark >Home </v-btn>
             
         </div>
         <div>
