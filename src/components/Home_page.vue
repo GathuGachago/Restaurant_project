@@ -1,10 +1,10 @@
 <template>
     <v-card class="mx-auto" elevation="24">
-      <v-carousel hide-delimiters>
-            <v-carousel-item src="/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay (1)" cover> </v-carousel-item>
-            <v-carousel-item src="./../assets/pexels-asadphoto-1449773.jpg" cover> </v-carousel-item>
+      <v-carousel>
+            <v-carousel-item src="chickenSource"> </v-carousel-item>
+            <v-carousel-item src="/public/chicken-source.jpg" cover> </v-carousel-item>
             <v-carousel-item src="./../assets/pexels-narda-yescas-724842-1566837.jpg" cover> </v-carousel-item>
-            <v-carousel-item src="/src/assets/pexels-lawrencesuzara-1581554.jpg" cover> </v-carousel-item>
+            <v-carousel-item src="/public/sausage.jpg" cover> </v-carousel-item>
         </v-carousel>
 
     </v-card>
@@ -20,7 +20,8 @@
 
                                 <v-card-subtitle>Coming in hot this week</v-card-subtitle>
                             </v-card-item>
-                            <v-img height="200px" src="https://unsplash.com/photos/a-car-driving-down-a-snow-covered-street-pkmEdKpFM4k" cover ></v-img>
+                            <v-img height="200px" src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" cover ></v-img>
+                                
 
                             <v-card-text>
                             The New Menu is coming in hot this week. Be sure to check out our new dishes and drinks.Introducing the new tantalizing cherry milkshake and more
@@ -32,7 +33,7 @@
 
                             <v-card-subtitle>Fantastic Fridays.Buy one cocktail get one free</v-card-subtitle>
                             </v-card-item>
-                            <v-img height="200px" src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" cover ></v-img>
+                            <v-img height="200px" src="https://media.istockphoto.com/id/1303977605/photo/five-cocktails-in-hands-joined-in-celebratory-toast.webp?a=1&b=1&s=612x612&w=0&k=20&c=s-Duj9ZibDzZR5ziNbAYWQYbKUICC9Z4lQSRNBCQz1A=" cover ></v-img>
 
                             <v-card-text>
                            free Cocktails for averyone on Fridays. Buy one cocktail get one free. Come and enjoy our fantastic cocktails
@@ -50,7 +51,7 @@
 
                     <v-card-subtitle>Karaoke Night</v-card-subtitle>
                     </v-card-item>
-                    <v-img height="200px" src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" cover ></v-img>
+                    <v-img height="200px" src="https://img.freepik.com/premium-psd/flyer-karaoke-with-gold-lettering-gold-sign-that-says-live-music_394954-53.jpg?ga=GA1.1.1044935582.1740119784&semt=ais_hybrid" cover ></v-img>
 
                     <v-card-text>
                     Karaoke Night is coming up. Be sure to come and enjoy the night with your friends and family. Sing your heart out and win amazing prizes
@@ -105,29 +106,9 @@
         </v-container>
         </v-card>
     </v-container>
-    
-    import { createApp } from 'vue'
-import App from './App.vue'
-import router from'./router'
-import '@mdi/font/css/materialdesignicons.css'
-
-//Vuetify
-import 'vuetify/styles'
-import { createVuetify } from 'vuetify'
-import * as components from 'vuetify/components'
-import * as directives from 'vuetify/directives'
-
-const vuetify = createVuetify({
-    components,
-    directives,
-    icons: {
-      defaultSet: 'mdi', // This is already the default value - only for display purposes
-    },
-  })
-
-createApp(App).use(router).use(vuetify).mount('#app')
 </template>
 
 <script setup>
+
 
 </script>

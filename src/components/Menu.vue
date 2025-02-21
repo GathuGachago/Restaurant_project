@@ -19,18 +19,48 @@
 
                                 <v-card-subtitle>{{ item.description }}</v-card-subtitle>
                             </v-card-item>
-                            <v-img height="200px" src="https://unsplash.com/photos/a-car-driving-down-a-snow-covered-street-pkmEdKpFM4k" cover ></v-img>
+                            <v-img height="200px" :src="item.image" cover ></v-img>
 
                             <v-card-text>
                             {{ item.price }}
+                            
                             </v-card-text>
+                            <v-btn @click="addToOrder(item)">Order</v-btn>
+
                         </v-card>
                         </v-col>
                         </v-row>
                         </v-container>
                         </v-card>
                         </v-container>
-                
+                        
+                        <v-container>
+        <v-card color="blue" >
+            <v-card-title>
+                <div class="text-h6">Current order: {{totalOrderAmount}}</div>
+            </v-card-title>
+        </v-card>
+    </v-container>
+    <v-container>
+        <v-card class="mx-auto" elevation="24">
+            <v-container>
+                <v-row>
+                    <v-col cols="12" md="4" v-for="item in orderItems" :key=item>
+                        <v-card color="yellow">
+                            <v-card-item>
+                            <v-card-title>{{ item.name }}</v-card-title>
+
+                            <v-card-subtitle>{{ item.description }}</v-card-subtitle>
+                            </v-card-item>
+                            <v-img height="200px" :src="item.image" cover ></v-img>
+
+                            <v-card-text>{{ item.price }}</v-card-text>
+                        </v-card>
+                        </v-col>
+                </v-row>
+            </v-container>
+        </v-card>
+    </v-container>               
 </template>
 
 
@@ -39,10 +69,11 @@ const menuItems = [
     {
         name: "Chips",
         price: 200,
+        
         description: "Best chips in town",
         size: "Large",
         offers: "None",
-        image: "https://unsplash.com/photos/a-basket-of-french-fries-sitting-on-top-of-a-wooden-table-ChXHveqrb28?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash"
+        image: "https://image.shutterstock.com/image-photo/homemade-french-fries-ketchup-roasted-260nw-2489017835.jpg"
     },
     {
         name: "Sausage",
@@ -50,7 +81,7 @@ const menuItems = [
         description: "Best sausages in town",
         size: "None",
         offers: "None",
-        image: "https://unsplash.com/photos/sausage-on-black-round-pan-cSxpCQrRlo8"
+        image: "https://img.freepik.com/premium-photo/high-angle-view-sausages-basket_1048944-22364747.jpg?ga=GA1.1.1044935582.1740119784&semt=ais_hybrid"
     },
     {   
         name: "Burger",
@@ -58,7 +89,7 @@ const menuItems = [
         description: "Best burgers in town",
         size: "Large",   
         offers: "None",
-        image: "https://unsplash.com/photos/cheeseburger-on-white-ceramic-plate-7LbJgJvUvZI"
+        image: "https://image.shutterstock.com/image-photo/beef-burger-stacked-cheese-bacon-260nw-2502135717.jpg"
 
     },
     {
@@ -67,7 +98,7 @@ const menuItems = [
         description: "Best pizza in town",
         size: "Large",
         offers: "None",
-        image: "https://unsplash.com/photos/pizza-on-white-ceramic-plate-7LbJgJvUvZI"
+        image: "https://image.shutterstock.com/image-photo/fresh-homemade-italian-pizza-margherita-260nw-1829205563.jpg"
     },
     {
         name: "Pasta",
@@ -75,7 +106,7 @@ const menuItems = [
         description: "Best pasta in town",
         size: "Large",
         offers: "None",
-        image: "https://unsplash.com/photos/pasta-on-white-ceramic-plate-7LbJgJvUvZI"
+        image: "https://image.shutterstock.com/image-photo/dinner-plate-spaghetti-vegan-bolognese-260nw-2493019461.jpg"
     },
     {
         name: "Chicken",
@@ -83,7 +114,7 @@ const menuItems = [
         description: "Best chicken in town",
         size: "Large",
         offers: "None",
-        image: "https://unsplash.com/photos/chicken-on-white-ceramic-plate-7LbJgJvUvZI"
+        image: "https://img.freepik.com/free-photo/grilled-chicken-with-fried-potatoes_181624-1168.jpg?ga=GA1.1.1044935582.1740119784&semt=ais_hybrid"
     },
     {
         name: "Fish",
@@ -91,9 +122,21 @@ const menuItems = [
         description: "Best fish in town",
         size: "Large",
         offers: "None",
-        image: "https://unsplash.com/photos/fish-on-white-ceramic-plate-7LbJgJvUvZI"
+        image: "https://img.freepik.com/free-photo/sour-curry-with-snakehead-fish-spicy-garden-hot-pot-thai-food_1150-26407.jpg?ga=GA1.1.1044935582.1740119784&semt=ais_hybrid"
     }
 
 ]
+var orderItems = []
+var totalOrderAmount = 0
+
+function calculaTotalAmount(price){
+    totalOrderAmount += price
+}
+
+function addToOrder(item){
+    orderItems.push(item)
+    calculateTotalAmount(item.price)
+    
+}
 
 </script>
